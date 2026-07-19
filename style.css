@@ -1,0 +1,140 @@
+/* === 1. 全体の設定（和柄背景） === */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    margin: 0; 
+    background-image: url('松模様-和風かっこいい背景青-ブルー.png');
+    background-size: cover;       /* 画面全体を覆う */
+    background-position: center;  /* 中央に配置 */
+    background-attachment: fixed; /* スクロールしても背景を固定する */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* === 2. メインの枠（スクロール設定を含む） === */
+#app-container {
+    background-color: rgba(80, 80, 80, 0.7); /* 枠全体を暗い灰色、透明度70%に変更 */
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: #ffffff; /* コンテナ内の基本の文字色を白に */
+}
+
+/* === 3. テキスト・見出しの設定 === */
+h1 {
+    color: #ffffff; /* タイトルを白文字に */
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #e2e8f0; /* サブタイトルを少し明るいグレーに */
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.question-text {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    text-align: left;
+    color: #ffffff; /* 質問文を白文字に */
+}
+
+.progress {
+    color: #e2e8f0; /* 進捗テキストを少し明るいグレーに */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: right;
+    font-weight: bold;
+}
+/* === 4. 選択肢ボタンの設定 === */
+/* === 4. 選択肢ボタンの設定 === */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    background-color: rgba(120, 120, 120, 0.6); /* 灰色の背景（少し透け感あり） */
+    border: 1px solid #a0aec0; /* 境界線をうっすらと表示 */
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff; /* 白文字 */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* 選択時（PCでのホバー時、スマホでのタップ時）の設定 */
+.btn:hover, .btn:active {
+    background-color: #3182ce; /* 選択時の背景を青色に */
+    border-color: #3182ce;     /* 枠線も青色に同化させる */
+    color: #ffffff;            /* 文字は白のまま */
+    transform: translateY(-1px); /* 少し浮き上がるアニメーション */
+}
+/* === 5. 結果画面のキャラクターカード設定 === */
+/* 結果カードの設定 */
+/* 結果カードの設定 */
+.character-card {
+    background-color: transparent;
+    /* 枠線を白からキャラクターの固有色に変更し、少し太く(3px)します */
+    border: 3px solid var(--theme-color); 
+    border-radius: 16px;
+    padding: 25px 20px;
+    margin: 20px 0;
+    text-align: center;
+    /* 枠線の外側に、キャラクターの固有色でふんわりと光る影を追加します */
+    box-shadow: 0 0 20px var(--theme-color); 
+}
+
+/* 透過の邪魔になるグラデーション装飾を無効化 */
+.character-card::before {
+    display: none; 
+}
+
+/* 型と種（見出し）をキャラクターの固有色に変更 */
+.character-type {
+    font-size: 1.4rem;
+    color: var(--theme-color); /* 白文字からキャラクターの固有色に変更 */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* 背景に溶け込まないよう影を追加 */
+}
+/* 説明文を白文字に変更 */
+.result-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    color: #ffffff; /* 白文字 */
+}
+
+.restart-btn {
+    background-color: var(--theme-color, #4a5d23);
+    color: white;
+    border: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restart-btn:hover {
+    opacity: 0.9;
+    color: white;
+    transform: translateY(-2px);
+}
